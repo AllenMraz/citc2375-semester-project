@@ -1,0 +1,83 @@
+body{
+    margin: 0px;
+    padding: 9px;
+    background-color: darkslategray;
+}
+header{
+    background-color: green;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+header hr{
+    border: 1px solid d;
+    margin-top: 10px;
+}
+.page-title{
+    color: white;
+    text-align: center;
+}
+.nav-link{
+    color: white;
+    background-color: darkslategray;
+    text-decoration: none;
+    margin: 5px;
+    padding: 10px;
+}
+.nav-link:hover{
+    background-color: gray;
+}
+/* Style for the main content */
+main{
+    width: 100%;
+    margin: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: green;
+    color: white;
+}
+main hr{
+    border: 1px solid darkslategray;
+    margin-top: 10px;
+}
+img{
+    max-width: 100%;
+    height: 200px;
+}
+.page-description{
+    font-size: 1.2em;
+    text-align: center;
+}
+.section-title{
+    font-size: 1.5em;
+    margin-top: 20px;
+    text-align: center;
+}
+.section-description{
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.game-card{
+    border: 1px solid orange;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    background-color: darkred;
+    display: inline-block;
+    max-width: 300px;
+    max-height: fit-content;
+}
+.game-title{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.game-description{
+    font-size: 1em;
+    margin-top: 10px;
+    height: 50px;
+}
+.game-genre, .game-platform{
+    font-size: 0.9em;
+    color: lightgray;
+}
