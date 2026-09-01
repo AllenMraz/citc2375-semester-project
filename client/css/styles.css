@@ -5,8 +5,11 @@ body{
 }
 header{
     background-color: green;
-    padding: 10px;
+    padding: 5px;
     margin-bottom: 10px;
+    max-width: 1380px;
+    margin-left: auto;
+    margin-right: auto;
 }
 header hr{
     border: 1px solid d;
@@ -28,10 +31,9 @@ header hr{
 }
 /* Style for the main content */
 main{
-    width: 100%;
+    max-width: 1380px;
     margin: auto;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px;
     background-color: green;
     color: white;
 }
