@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Add Game</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="page-title">Add Game</h1>
+        <nav class="navigation">
+            <a href="index.html" target="_self" class="nav-link">Home</a>
+            <a href="about.html" target="_self" class="nav-link">About</a>
+            <a href="add.html" target="_self" class="nav-link">Add Game</a>
+        </nav>
+    </header>
+    <main>
+        <p class="page-description">Use this form to add a new game to your collection.</p>
+        <div class="form-container">
+            <form action="#">
+                <fieldset>
+                    <label for="game-title">
+                        Game Title:
+                        <input type="text" id="game-title" name="game-title" required>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="game-image">
+                        Game Image URL:
+                        <input type="url" id="game-image" name="game-image" required>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="game-discription">
+                        Game Description:
+                        <textarea id="game-discription" name="game-discription" required minlength="15"
+                            maxlength="200"></textarea>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <label for="game-gener">
+                        Game Genre:
+                        <input type="text" id="game-gener" name="game-gener" required>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <p>Game Platforms:</p>
+                    <label for="PC">
+                        <input type="checkbox" id="PC" name="PC" checked>
+                        PC
+                    </label>
+                    <label for="PlayStation">
+                        <input type="checkbox" id="Playtation" name="PlayStation">
+                        PlayStation
+                    </label>
+                    <label for="Xbox">
+                        <input type="checkbox" id="Xbox" name="Xbox">
+                        Xbox
+                    </label>
+                    <label for="Switch">
+                        <input type="checkbox" id="Switch" name="Switch">
+                        Switch
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label for="game-steam-link">
+                        Game Steam Link:
+                        <input type="url" id="game-steam-link" name="game-steam-link">
+                    </label>
+                    <p></p>
+                    <label for="game-xbox-link">
+                        Game Xbox Link:
+                        <input type="url" id="game-xbox-link" name="game-xbox-link">
+                    </label>
+                    <p></p>
+                    <label for="game-playstation-link">
+                        Game PlayStation Link:
+                        <input type="url" id="game-playstation-link" name="game-playstation-link">
+                    </label>
+                    <p></p>
+                    <label for="game-switch-link">
+                        Game Switch Link:
+                        <input type="url" id="game-switch-link" name="game-switch-link">
+                    </label>
+                </fieldset>
+                <button type="submit" class="btn btn-submit">Add Game</button>
+            </form>
+        </div>
+    </main>
+</body>
+<footer>
+</footer>
+
+</html>

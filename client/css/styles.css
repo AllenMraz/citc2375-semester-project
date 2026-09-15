@@ -3,6 +3,7 @@
     --color-secondary-background: #008900;
     --color-text: #ffffff;
     --color-card-background: #8b0000;
+    --color-form-background: #00CA00;
 }
 body{
     margin: 0px;
@@ -112,4 +113,75 @@ img{
 }
 .game-card a{
     color:  #00ff80;
+}
+
+/* Style for the form */
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--color-form-background);
+    width: 80%;
+}
+
+fieldset{
+    border: 2px solid var(--color-background);
+    border-radius: 2px;
+    padding: 10px;
+    margin: 5px;
+    width: 50%;
+    flex: 1 1;
+}
+
+input[type="text"],input[type="url"]{
+    padding: 5px;
+    margin: 5px;
+    width: 80%;
+    box-sizing: border-box;
+    background-color: lightgray;
+}
+
+textarea{
+    padding: 5px;
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    background-color: lightgray;
+}
+
+.btn{
+    background-color: var(--color-background);
+    color: var(--color-text);
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: gray;
+}
+.btn-submit{
+    width: 50%;
+    flex: 1 1;
+}
+/* table styles */
+.platform-table{
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.platform-table th, .platform-table td{
+    border: 1px solid var(--color-background);
+    padding: 10px;
+    text-align: center;
+    width: 25%;
 }
