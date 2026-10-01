@@ -30,4 +30,4 @@ Implemented flexbox to help with the layout of the indivudal item cards for bett
 Added an add page using a form that will later on be the main way of adding new iteams cards on the main page. The form asks for the title of the game, an image, the genere, platforms it is on, and corisponding links to the respective stores.Added a tabel in the about page that displays the number of games for each gaming platform.
 
 ## Project Progress Week 6
-Added a json page called apps and added some basic json lines. these json lines inclued a template for adding more games into a total count of games, a sentence displaying the number of games, and a check to see if there is games in the colection.
+Added a js page called apps and added some basic js lines. these js lines inclued a template for adding more games into a total count of games, a sentence displaying the number of games, and a check to see if there is games in the colection.
