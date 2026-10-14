@@ -31,3 +31,6 @@ Added an add page using a form that will later on be the main way of adding new 
 
 ## Project Progress Week 6
 Added a js page called apps and added some basic js lines. these js lines inclued a template for adding more games into a total count of games, a sentence displaying the number of games, and a check to see if there is games in the colection.
+
+## Project Progress Week 9
+Added a js page called data that stores a array of game objects that contains the information that the cards contain. This js page also has three funchions on to grab a spicifice item by id, one that collects an array of games by genre, and the last one caluelates how many games there are for indvidual platforms. converst items into json the terns it back into js code. updated app.js so it calls the functions from data.js.
