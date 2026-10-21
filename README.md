@@ -34,3 +34,6 @@ Added a js page called apps and added some basic js lines. these js lines inclue
 
 ## Project Progress Week 9
 Added a js page called data that stores a array of game objects that contains the information that the cards contain. This js page also has three funchions on to grab a spicifice item by id, one that collects an array of games by genre, and the last one caluelates how many games there are for indvidual platforms. converst items into json the terns it back into js code. updated app.js so it calls the functions from data.js.
+
+## Project Progress Week 10
+Changed the display for the cards from flex box to grid. The grid will adjust its columns to fit the screen. Added a quirey select that checks to see if the screen is a sertent size to help provent the columns from being pushed off screen. Added a few utitlity classes for consistent desine. Implemented a few of those utitlity classes for sertent elements.

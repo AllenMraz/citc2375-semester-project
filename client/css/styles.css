@@ -9,6 +9,7 @@ body{
     margin: 0px;
     padding: 9px;
     background-color: var(--color-background);
+    
 }
 header{
     background-color: var(--color-secondary-background);
@@ -78,10 +79,20 @@ img{
     text-align: center;
 }
 .game-collection{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-items: center;
 }
+
+@media (max-width: 350px){
+    .game-collection{
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+
 .game-card{
     border: 1px solid orange;
     border-radius: 5px;
@@ -89,11 +100,10 @@ img{
     margin: 10px;
     text-align: center;
     background-color: var(--color-card-background);
-    display: inline-block;
-    flex: 1 1 300px;
     max-width: 300px;
     max-height: fit-content;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
 }
 .game-card:hover{
     box-shadow: 0px 0px 20px rgba(0, 255, 128, 0.5);
@@ -141,7 +151,7 @@ fieldset{
     flex: 1 1;
 }
 
-input[type="text"],input[type="url"]{
+.input-field{
     padding: 5px;
     margin: 5px;
     width: 80%;
@@ -184,4 +194,28 @@ textarea{
     padding: 10px;
     text-align: center;
     width: 25%;
+}
+
+/* Utility classes */
+.font-bold{
+    font-weight: bold;
+}
+
+.font-italic{
+    font-style: italic;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.two-column{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.two-wide{
+    grid-column: span 2;
 }

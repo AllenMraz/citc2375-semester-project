@@ -24,19 +24,19 @@
                 <fieldset>
                     <label for="game-title">
                         Game Title:
-                        <input type="text" id="game-title" name="game-title" required>
                     </label>
+                    <input type="text" id="game-title" name="game-title" class="input-field " required>
                 </fieldset>
                 <fieldset>
                     <label for="game-image">
                         Game Image URL:
-                        <input type="url" id="game-image" name="game-image" required>
                     </label>
+                    <input type="url" id="game-image" name="game-image" class="input-field" required>
                 </fieldset>
                 <fieldset>
                     <label for="game-discription">
                         Game Description:
-                        <textarea id="game-discription" name="game-discription" required minlength="15"
+                        <textarea id="game-discription" name="game-discription" class="input-field" required minlength="15"
                             maxlength="200"></textarea>
                     </label>
                 </fieldset>
@@ -44,11 +44,11 @@
                 <fieldset>
                     <label for="game-gener">
                         Game Genre:
-                        <input type="text" id="game-gener" name="game-gener" required>
+                        <input type="text" id="game-gener" name="game-gener" class="input-field"  required>
                     </label>
                 </fieldset>
-                <fieldset>
-                    <p>Game Platforms:</p>
+                <fieldset class="two-column">
+                    <p class="two-wide">Game Platforms:</p>
                     <label for="PC">
                         <input type="checkbox" id="PC" name="PC" checked>
                         PC
@@ -69,22 +69,22 @@
                 <fieldset>
                     <label for="game-steam-link">
                         Game Steam Link:
-                        <input type="url" id="game-steam-link" name="game-steam-link">
+                        <input type="url" id="game-steam-link" name="game-steam-link" class="input-field">
                     </label>
                     <p></p>
                     <label for="game-xbox-link">
                         Game Xbox Link:
-                        <input type="url" id="game-xbox-link" name="game-xbox-link">
+                        <input type="url" id="game-xbox-link" name="game-xbox-link" class="input-field">
                     </label>
                     <p></p>
                     <label for="game-playstation-link">
                         Game PlayStation Link:
-                        <input type="url" id="game-playstation-link" name="game-playstation-link">
+                        <input type="url" id="game-playstation-link" name="game-playstation-link" class="input-field">
                     </label>
                     <p></p>
                     <label for="game-switch-link">
                         Game Switch Link:
-                        <input type="url" id="game-switch-link" name="game-switch-link">
+                        <input type="url" id="game-switch-link" name="game-switch-link" class="input-field">
                     </label>
                 </fieldset>
                 <button type="submit" class="btn btn-submit">Add Game</button>
