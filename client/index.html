@@ -24,39 +24,38 @@
       <p class="section-description">These are some of the games in my collection.</p>
     </section>
     <hr/>
-    <section class="game-collection">
-      <article class="game-card">
-        <h3 class="game-title">Dwarf Fortress</h3>
-        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/975370/34e18f5695fffd64458b78110930abc5258ccd14/header.jpg?t=1779740424" alt="Dwarf Fortress title image" />
-        <p class="game-description">A simulation game about managing a dwarven colony.</p>
-        <p class="game-genre">Genre: Simulation</p>
-        <p class="game-platform">Platforms: PC</p>
-        <p class="game-steam-link">Steam Link: <a href="https://store.steampowered.com/app/975370/Dwarf_Fortress/" target="_blank">Dwarf Fortress</a></p>
-      </article>
-      <article class="game-card">
-        <h3 class="game-title">RimWorld</h3>
-        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/294100/capsule_616x353.jpg?t=1686146400" alt="RimWorld title image" />
-        <p class="game-description">A colony simulation game about managing a group of survivors.</p>
-        <p class="game-genre">Genre: Simulation</p>
-        <p class="game-platform">Platforms: PC</p>
-        <p class="game-steam-link">Steam Link: <a href="https://store.steampowered.com/app/294100/RimWorld/" target="_blank">RimWorld</a></p>
-      </article>
-      <article class="game-card">
-        <h3 class="game-title">Slay The Spire 2</h3>
-        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/b0958d387dc366211e0f353443710cfcf9fdb020/header.jpg?t=1787169309" alt="Slay The Spire 2 title image" />
-        <p class="game-description">A deck-building roguelike game.</p>
-        <p class="game-genre">Genre: Roguelike</p>
-        <p class="game-platform">Platforms: PC</p>
-        <p class="game-steam-link">Steam Link: <a href="https://store.steampowered.com/app/2868840/Slay_The_Spire_2/" target="_blank">Slay The Spire 2</a></p>
-      </article>
-      <article class="game-card">
-        <h3 class="game-title">The Witcher 3</h3>
-        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/capsule_616x353.jpg?t=1686146400" alt="The Witcher 3 title image" />
-        <p class="game-description">A role-playing game set in a fantasy world.</p>
-        <p class="game-genre">Genre: RPG</p>
-        <p class="game-platform">Platforms: PC, PlayStation 4, Xbox One</p>
-        <p class="game-steam-link">Steam Link: <a href="https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/" target="_blank">The Witcher 3</a></p>
-      </article>
+    <section class="filter-section">
+      <div class="filter-container">
+
+        <label for="platform-filter" class="filter-label">Filter by Platform:
+        <select class="filter-select" id="platform-filter">
+            <option value="all">All Platforms</option>
+            <option value="PC">PC</option>
+            <option value="PlayStation">PlayStation</option>
+            <option value="Xbox">Xbox</option>
+            <option value="Nintendo">Nintendo</option>
+          </select>
+        </label>
+
+        <label for="genre-filter" class="filter-label">Filter by Genre:
+          <select class="filter-select" id="genre-filter">
+            <option value="all">All Genres</option>
+            <option value="Action-Adventure">Action-Adventure</option>
+            <option value="Colony Management">Colony Management</option>
+            <option value="Farming">Farming</option>
+            <option value="RPG">RPG</option>
+          </select>
+        </label>
+
+        <label for="search-input" class="filter-label">Search by Title:
+          <input type="text" id="search-input" class="filter-input" placeholder="Search by title...">
+        </label>
+      </div>
+    </section>
+    </section>
+    <section id="game-collection">
+    
+        
     </section>
   </main>
   <footer>
