@@ -1,67 +1,13 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/styles.css">
-  <title>Game Collection</title>
-</head>
-<body>
-  <header>
-    <h1 class="page-title">Game Collection</h1>
-    <nav class="navigation">
-      <a href="index.html" target="_self" class="nav-link">Home</a>
-      <a href="about.html" target="_self" class="nav-link">About</a>
-      <a href="add.html" target="_self" class="nav-link">Add Game</a>
-    </nav>
-    <hr/>
-  </header>
-  <main>
-    <p class="page-description font-bold">This is the main page of my game collection.</p>
-    <hr />
-    <section class="collection-header">
-      <h2 class="section-title">Games</h2>
-      <p class="section-description">These are some of the games in my collection.</p>
-    </section>
-    <hr/>
-    <section class="filter-section">
-      <div class="filter-container">
-
-        <label for="platform-filter" class="filter-label">Filter by Platform:
-        <select class="filter-select" id="platform-filter">
-            <option value="all">All Platforms</option>
-            <option value="PC">PC</option>
-            <option value="PlayStation">PlayStation</option>
-            <option value="Xbox">Xbox</option>
-            <option value="Nintendo">Nintendo</option>
-          </select>
-        </label>
-
-        <label for="genre-filter" class="filter-label">Filter by Genre:
-          <select class="filter-select" id="genre-filter">
-            <option value="all">All Genres</option>
-            <option value="Action-Adventure">Action-Adventure</option>
-            <option value="Colony Management">Colony Management</option>
-            <option value="Farming">Farming</option>
-            <option value="RPG">RPG</option>
-          </select>
-        </label>
-
-        <label for="search-input" class="filter-label">Search by Title:
-          <input type="text" id="search-input" class="filter-input" placeholder="Search by title...">
-        </label>
-      </div>
-    </section>
-    </section>
-    <section id="game-collection">
-    
-        
-    </section>
-  </main>
-  <footer>
-    
-  </footer>
-  <script src="js/data.js"></script>
-  <script src="js/apps.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>client</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

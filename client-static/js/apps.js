@@ -33,7 +33,7 @@ function renderItems(itemsToRender){
     for (let gameItem of itemsToRender) {
         const gameItemElement = document.createElement("div");
         gameItemElement.setAttribute("class", "game-card");
-        const faviertList = JSON.parse(localStorage.getItem("favoriteGamesList"))
+        const faviertList = JSON.parse(localStorage.getItem("favoriteGamesList")) || [];
 
 
         gameItemElement.innerHTML = `
