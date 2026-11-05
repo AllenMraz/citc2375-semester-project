@@ -1,122 +1,121 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import {useState} from 'react';
+import Header from './components/Header.jsx';
+import ItemList from './components/ItemList.jsx';
+import {items} from './data.js';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App(){
+  const [selectedGenre, setSelectedGenre] = useState(() => {
+    return localStorage.getItem('myProject.selectedGenre') || 'All';
+  });
+  const [searchTerm, setSearchTerm] = useState(() => {
+    return localStorage.getItem('myProject.searchTerm') || '';
+  });
+  const [selectedPlatform, setSelectedPlatform] = useState(() => {
+    return localStorage.getItem('myProject.selectedPlatform') || 'All';
+  });
+  const [favoriteIds, setFavoriteIds] = useState(() => {
+    const storedFavorites = localStorage.getItem('myProject.favoriteIds');
+    return storedFavorites ? JSON.parse(storedFavorites) : [];
+  });
+
+  function handleGenreChange(event){
+    const genre = event.target.value;
+
+    setSelectedGenre(genre);
+    localStorage.setItem(
+      'myProject.selectedGenre', genre
+    );
+  }
+  
+  function handleSearchChange(event){
+    const search = event.target.value;
+    setSearchTerm(search);
+    localStorage.setItem(
+      'myProject.searchTerm', search
+    );
+  }
+  
+  function handlePlatformChange(event){
+    const platform = event.target.value;
+    setSelectedPlatform(platform);
+    localStorage.setItem(
+      'myProject.selectedPlatform', platform
+    );
+  }
+
+  function handleToggleFavorite(itemId){
+    const updated = favoriteIds.includes(itemId)
+      ? favoriteIds.filter(id => id !== itemId)
+      : [...favoriteIds, itemId];
+
+    setFavoriteIds(updated);
+    localStorage.setItem(
+      'myProject.favoriteIds', JSON.stringify(updated)
+    );
+  }
+
+  const filteredItems = items.filter(item => {
+    const genreMatch = selectedGenre === 'All' ? true : item.genre === selectedGenre;
+    const platformMatch = selectedPlatform === 'All' ? true : item.platform.includes(selectedPlatform);
+    const searchMatch = item.name.toLowerCase().includes(searchTerm.toLowerCase());
+
+    return genreMatch && platformMatch && searchMatch;
+  });
 
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      <Header />
 
-      <div className="ticks"></div>
+      <main>
+        <p className="page-description font-bold">This is the main page of my game collection.</p>
+        <hr />
+        <section className="collection-header">
+          <h2 className="section-title">Games</h2>
+          <p className="section-description">These are some of the games in my collection.</p>
+        </section>
+        <hr/>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        <section className="filter-section">
+          <div className="filter-container">
+            <label htmlFor="genre-select">Filter by Genre:
+              <select className="filter-select" id="genre-select" value={selectedGenre} onChange={handleGenreChange}>
+                <option value="All">All</option>
+                <option value="Action-Adventure">Action-Adventure</option>
+                <option value="Farming">Farming</option>
+                <option value="RPG">RPG</option>
+                <option value="Colony Management">Colony Management</option>
+                <option value="Roguelike">Roguelike</option>
+              </select>
+            </label>
+        
+            <label htmlFor="platform-select">Filter by Platform:
+              <select className="filter-select" id="platform-select" value={selectedPlatform} onChange={handlePlatformChange}>
+                <option value="All">All</option>
+                <option value="PC">PC</option>
+                <option value="PlayStation">PlayStation</option>
+                <option value="Xbox">Xbox</option>
+                <option value="Nintendo">Nintendo</option>
+              </select>
+            </label>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+            <label htmlFor="search-input">Search by Name:
+              <input
+                type="text"
+                className="filter-input"
+                id="search-input"
+                value={searchTerm}
+                onChange={handleSearchChange}
+                placeholder="Search games..."
+              />
+            </label>
+          </div>
+        </section>
+
+        <ItemList items={filteredItems} favoriteIds={favoriteIds} onToggleFavorite={handleToggleFavorite}/>
+      </main>
+
     </>
-  )
-}
+  );
 
-export default App
+}
