@@ -1,13 +1,17 @@
+
+import { Link } from 'react-router';
+
 export default function Header() {
     return (
-    <header>
-        <h1 className="page-title">Game Collection</h1>
-        <nav className="navigation">
-        <a href="index.html" target="_self" className="nav-link">Home</a>
-        <a href="about.html" target="_self" className="nav-link">About</a>
-        <a href="add.html" target="_self" className="nav-link">Add Game</a>
-        </nav>
-        <hr/>
-  </header>
+        <header>
+            <h1 className="page-title">Game Collection</h1>
+
+            <nav className="navigation">
+                <Link to="/" className="nav-link">Home</Link>
+                <Link to="/about" className="nav-link">About</Link>
+                <Link to="/add" className="nav-link">Add Game</Link>
+            </nav>
+            <hr />
+        </header>
     );
 }

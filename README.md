@@ -43,3 +43,6 @@ Removed the example cards and replaced them with a JovaScript code that will ren
 
 ## Project Progress Week 12
 Started to convert the project into react. Got the index built using react. tranferid old project to client-static to keep as a template. fixed a logic issue in the old verion that would provent game cards from loading when there was nothing in the locale storge for faviorate games. The new version of index now dose not need to clear filters and now combines all three filters for better search potential. add and about pages still need to be built using react. 
+
+## Project Progress Week 13
+Fully converted website to react. Both add and about are rebuilt using react. add is now full functional and adds to the list of iteams instad of just doing nothing with the submit. The table in about now currectly updates based on the games in the collection.
