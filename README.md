@@ -46,3 +46,6 @@ Started to convert the project into react. Got the index built using react. tran
 
 ## Project Progress Week 13
 Fully converted website to react. Both add and about are rebuilt using react. add is now full functional and adds to the list of iteams instad of just doing nothing with the submit. The table in about now currectly updates based on the games in the collection.
+
+## Project Progress Week 14
+Stoped reading form data.js deractily and used api.ts to load all of my items. incoperated type script into the project as well as some asincrinist functions.
