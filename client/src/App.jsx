@@ -1,12 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router';
 import Home from './components/views/Home.jsx';
 import About from './components/views/About.jsx';
 import AddItem from './components/views/AddItem.jsx';
-import { items as initialGameItems } from './data.js';
+import { loadItems } from './api';
 import './App.css';
 
+
+
 export default function App() {
+
+const [isLoading, setIsLoading] = useState(true);
+const [error, setError] = useState(null);
+
+
+    const [gameItems, setGameItems] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState(() => {
     return localStorage.getItem('myProject.selectedGenre') || 'All';
   });
@@ -20,7 +28,36 @@ export default function App() {
     const storedFavorites = localStorage.getItem('myProject.favoriteIds');
     return storedFavorites ? JSON.parse(storedFavorites) : [];
   });
-  const [gameItems, setGameItems] = useState(initialGameItems);
+
+    useEffect(() => {
+      let isMounted = true;
+
+      loadItems( setIsLoading, setError).then((data) => {
+        if (isMounted) {
+          setGameItems(data);
+          setIsLoading(false);
+        }
+      }).catch(() => {
+        
+      });
+      return () => {
+        isMounted = false;
+      };
+
+    }, []);
+
+
+
+
+
+  
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   return (
     <BrowserRouter>

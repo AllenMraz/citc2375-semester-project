@@ -1,6 +1,6 @@
 export default function Table({ PCCount, PlayStationCount, XboxCount, NintendoCount }) {
     return (
-        <table class="platform-table">
+        <table className="platform-table">
             <caption>Number of Games on each Platform</caption>
             <thead>
                 <tr>
